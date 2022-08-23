@@ -4,30 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css"/>
   <title>Coding Quiz Challenge</title>
 </head>
 
 <nav>
-    <h1>Coding Quiz Challenge</h1>
 </nav>
 
 <body>
-    <section>
-        <h2>Start</h2>
-        <div></div>
+    <header id="start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the set amount of time. Keep in mind that an incorrect answer will penalize your time by ten seconds!</p>
+    </header>
+
+    <section id="quiz-container">
+        <div id="question-container" class="hide"></div>
+            <div id="questions">Questions</div>
+            <div id="answer-btn" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        <div>
+            <div class=controls>
+                <button id="start-btn" class="startBtn btn hide">Start</button>
+                <button id="next-btn" class="next-Btn btn hide">Next</button>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Questions</h2>
-        <div></div>
-    </section>
-
-    <section>
+    <section id="score">
         <h2>Score</h2>
         <div></div>
+        <button id="submitBtn">Submit</button>
     </section>
-
-  <script src="./assets/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
