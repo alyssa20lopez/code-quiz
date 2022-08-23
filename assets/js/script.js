@@ -3,6 +3,7 @@ var questionContainerEl = document.getElementById('question-container');
 var questionEl = document.getElementById('questions');
 var answerBtn = document.getElementById('answer-btn');
 var nextBtn = document.getElementById('next-btn');
+var submitBtn = document.getElementById('submitBtn');
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -19,6 +20,20 @@ function startQuiz () {
     questionContainerEl.classList.remove('hide');
     setNextQuestion();
 }
+
+document.getElementById('start-btn').addEventListener("click", function() {
+    var timeLeft = 60;
+
+    var downloadTimer = setInterval(function function1() {
+        document.getElementById('count').innerHTML = timeLeft + ' ' + 'seconds left';
+
+        timeLeft -= 1;
+        if(timeLeft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById('count').innerHTML = "Time is up!"
+        }
+    })
+}, 1000);
 
 function setNextQuestion () {
     resetState()
@@ -115,3 +130,7 @@ var questions = [
         ]
     }
 ]
+
+submitBtn.addEventListener("click", fucntion() {
+    
+})
