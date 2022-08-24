@@ -32,13 +32,13 @@ function startQuiz () {
 var timeLeft = 30;
 var downloadTimer = null;
 startBtn.addEventListener("click", function() {
-        document.getElementById('count').innerHTML = 'Time: ' + timeLeft;
+        document.getElementById('count').innerHTML = 'Time: ' + '' + timeLeft;
         timeLeft = 30;
-        downloadTimer = setInterval(function function1() {
-        document.getElementById('count').innerHTML = 'Time: ' + timeLeft;
+        downloadTimer = setInterval(function() {
+        document.getElementById('count').innerHTML = 'Time: ' + '' + timeLeft;
 
         timeLeft--;
-        if(timeLeft === 0) {
+        if(timeLeft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById('count').innerHTML = "Time is up!"
         }
