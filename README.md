@@ -11,4 +11,4 @@ alyssa20lopez.github.io/
 code-quiz/)
 
 ## Visuals
-![Alt text](./assets/images/Coding-Quiz-Challenge.png
+![Alt text](./assets/images/Coding-Quiz-Challenge.png)
