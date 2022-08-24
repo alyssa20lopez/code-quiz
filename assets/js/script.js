@@ -141,17 +141,6 @@ var questions = [
     }
 ]
 
-submitBtn.addEventListener("click", function() {
-    let userInitials = userInitials.value.trim();
-    if (userInitials) {
-        userInitials.value = '';
-        highScore = JSON.parse(localStorage.getItem("timeLeft")) || [];
-        localStorage.setItem("timeLeft", JSON.stringify(highScore));
-        renderHighScores();
-        reset();
-    }
-})
-
 var state = '';
 function setState(newState) {
     state = newState;
@@ -173,4 +162,5 @@ function setState(newState) {
     }
 }
     setState("start");
+
 
