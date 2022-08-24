@@ -1,0 +1,41 @@
+html {
+    font-size: 16px;
+    font-family: 'Segoe UI'
+}
+
+nav { 
+    text-align: right;
+    padding-right: 2%;
+}
+
+header {
+    padding-top: 7%;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-weight: normal;
+    background-color: #eff5f8;
+    text-align: center;
+    padding-right: 3%;
+}
+
+#questions {
+    text-align: center;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    background-color: #4b0082;
+    color: white;
+    border-radius: 10%;
+    margin: 1%;
+    margin-left: 48%;
+
+}
+
+#start-btn {
+    margin-left: 48%;
+}

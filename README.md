@@ -11,5 +11,4 @@ alyssa20lopez.github.io/
 code-quiz/)
 
 ## Visuals
-![Alt text](./assets/images/
-Horiseon-Search-Optimization.png)
+![Alt text](./assets/images/Coding-Quiz-Challenge.png

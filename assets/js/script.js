@@ -6,6 +6,7 @@ var submitBtn = document.getElementById('submitBtn');
 var endQuiz = document.getElementById('end-quiz');
 var quizContainerEl = document.getElementById('quiz-container');
 var score = document.getElementById('score');
+var userInitials = document.getElementById('initials');
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -28,14 +29,13 @@ function startQuiz () {
     questionContainerEl.classList.remove('hide');
     setNextQuestion();
 }
-
-document.getElementById('count').setAttribute('style', 'float:right');
+var timeLeft = 30;
 var downloadTimer = null;
 startBtn.addEventListener("click", function() {
-    var timeLeft = 60;
-        document.getElementById('count').innerHTML = timeLeft + ' ' + 'seconds left';
+        document.getElementById('count').innerHTML = 'Time: ' + timeLeft;
+        timeLeft = 30;
         downloadTimer = setInterval(function function1() {
-        document.getElementById('count').innerHTML = timeLeft + ' ' + 'seconds left';
+        document.getElementById('count').innerHTML = 'Time: ' + timeLeft;
 
         timeLeft--;
         if(timeLeft === 0) {
@@ -80,7 +80,6 @@ function chooseAnswer(e) {
         setStatusClass(button, button.dataset.correct)
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextBtn.classList.remove('hide');
     } else {
         startBtn.innerText = 'Restart';
         startBtn.classList.remove('hide');
@@ -93,6 +92,7 @@ function setStatusClass(element, correct) {
     element.classList.add('correct');
     } else {
     element.classList.add('wrong');
+    timeLeft = timeLeft- 10;
     }
 };
 
@@ -115,7 +115,7 @@ var questions = [
     {
         question: 'Which of the following keywords is used to define a variable in Javascript?',
         answers: [
-            { text: 'var', correct: false},
+            { text: 'var', correct: false },
             { text: 'let', correct: false},
             { text: 'Both A and B', correct: true},
             { text: 'None of the Above', correct: false},
@@ -142,12 +142,11 @@ var questions = [
 ]
 
 submitBtn.addEventListener("click", function() {
-    let initValue = initEl.value.trim();
-    if (initValue) {
-        initEl.value = '';
-        highScore = JSON.parse(localStorage.getItem("score")) || [];
-        localStorage.setItem("score", JSON.stringify(highScore));
-        hide(inputScoreEl);
+    let userInitials = userInitials.value.trim();
+    if (userInitials) {
+        userInitials.value = '';
+        highScore = JSON.parse(localStorage.getItem("timeLeft")) || [];
+        localStorage.setItem("timeLeft", JSON.stringify(highScore));
         renderHighScores();
         reset();
     }
